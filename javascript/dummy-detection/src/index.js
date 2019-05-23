@@ -40,6 +40,11 @@ const result = {
 };
 
 const main = async () => {
+  // 1. Load images and metadata stored in `inDir`
+
+  // 2. Process image files
+
+  // 3. Output result files
   await fs.mkdir(outDir, { recursive: true });
   await fs.writeFile(outFile, JSON.stringify(result), 'utf8');
 };
