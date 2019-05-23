@@ -1,8 +1,9 @@
 {
-  "name": "circus-cs-plugin-sample-hello",
+  "name": "circus-cs-plugin-sample-dummy-detection",
   "version": "1.0.0",
   "description": "CIRCUS sample CAD Plug-in",
   "main": "index.js",
+  "repository": "https://github.com/utrad-ical/circus-cs-plugin-samples.git",
   "license": "MIT",
   "prettier": {
     "singleQuote": true

@@ -1,13 +1,13 @@
 /**
- * CIRCUS CS Plugin Sample - Hello World
+ * CIRCUS CS Plugin Sample - Dummy Lesion Detection
  */
 
-const path = rquire('path');
+const path = require('path');
 const fs = require('fs').promises;
 
+const inDir = '/circus/in';
 const outDir = '/circus/out';
 const outFile = path.join(outDir, 'results.json');
-const inDir = '/circus/in';
 
 const result = {
   metadata: {
@@ -23,16 +23,24 @@ const result = {
     lesionCandidates: [
       {
         rank: 1,
-        confidence: 0.8380112051963806,
+        confidence: 0.876,
         volumeId: 0,
         location: [200, 258, 58],
-        volumeSize: 885.4866027832031
+        volumeSize: 50.4
+      },
+      {
+        rank: 2,
+        confidence: 0.765,
+        volumeId: 0,
+        location: [250, 258, 58],
+        volumeSize: 31.4
       }
     ]
   }
 };
 
 const main = async () => {
+  await fs.mkdir(outDir, { recursive: true });
   await fs.writeFile(outFile, JSON.stringify(result), 'utf8');
 };
 
