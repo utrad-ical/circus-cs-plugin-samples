@@ -13,10 +13,10 @@
       "caption": "Lesion Candidates",
       "type": "LesionCandidates",
       "options": {
-        "maxDisplay": 3,
+        "maxCandidates": 3,
         "sortBy": ["rank", "asc"],
         "feedbackListener": {
-          "type": "SelectionFeedbackListener",
+          "type": "Choice",
           "options": {
             "personal": [
               { "caption": "known TP", "value": 1 },
