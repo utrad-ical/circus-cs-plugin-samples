@@ -1,0 +1,43 @@
+{
+  "pluginName": "Random-Detection",
+  "version": "1.0.0",
+  "description": "CIRCUS sample CAD Plug-in.",
+  "icon": {
+    "glyph": "cpu",
+    "color": "#0000ff",
+    "backgroundColor": "#ffffff"
+  },
+  "displayStrategy": [
+    {
+      "feedbackKey": "lesionCandidates",
+      "caption": "Lesion Candidates",
+      "type": "LesionCandidates",
+      "options": {
+        "maxCandidates": 3,
+        "sortBy": ["rank", "asc"],
+        "feedbackListener": {
+          "type": "Choice",
+          "options": {
+            "personal": [
+              { "caption": "known TP", "value": 1 },
+              { "caption": "missed TP", "value": 2, "consensualMapsTo": 1 },
+              { "caption": "FP", "value": -1 },
+              { "caption": "pending", "value": 0 }
+            ],
+            "consensual": [
+              { "caption": "TP", "value": 1 },
+              { "caption": "FP", "value": -1 },
+              { "caption": "pending", "value": 0 }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "feedbackKey": "falseNegatives",
+      "caption": "FN Input",
+      "type": "Locator",
+      "options": {}
+    }
+  ]
+}
